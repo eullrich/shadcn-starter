@@ -1,54 +1,115 @@
-# React + TypeScript + Vite
+# Shadcn Starter Pack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal starter template for building modern React applications with [Vite](https://vitejs.dev/), [TypeScript](https://www.typescriptlang.org/), and [shadcn/ui](https://ui.shadcn.com/) components.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚡️ [Vite](https://vitejs.dev/) - Lightning fast frontend tooling
+- ⚛️ [React 19](https://react.dev/) - JavaScript library for building user interfaces
+- 🔤 [TypeScript](https://www.typescriptlang.org/) - Strongly typed programming language
+- 🎨 [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- 📦 [shadcn/ui](https://ui.shadcn.com/) - Re-usable components built with Radix UI and Tailwind CSS
+- 🧩 [Lucide Icons](https://lucide.dev/) - Beautiful & consistent icon set
+- 📏 [ESLint](https://eslint.org/) - Pluggable JavaScript linter
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [pnpm](https://pnpm.io/) (recommended) or npm/yarn
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/shadcn-starter.git
+cd shadcn-starter
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Install dependencies
+```bash
+pnpm install
 ```
+
+3. Start the development server
+```bash
+pnpm dev
+```
+
+4. Open your browser and visit http://localhost:5173
+
+## Available Scripts
+
+- `pnpm dev` - Start the development server
+- `pnpm build` - Build for production
+- `pnpm lint` - Run ESLint
+- `pnpm preview` - Preview the production build locally
+
+## Project Structure
+
+```
+shadcn-starter/
+├── public/              # Static assets
+├── src/
+│   ├── assets/          # Images, fonts, etc.
+│   ├── components/      # React components
+│   │   └── ui/          # shadcn/ui components
+│   ├── lib/             # Utility functions
+│   ├── App.tsx          # Main application component
+│   ├── main.tsx         # Application entry point
+│   └── index.css        # Global styles
+├── components.json      # shadcn/ui configuration
+├── tsconfig.json        # TypeScript configuration
+└── vite.config.ts       # Vite configuration
+```
+
+## Adding shadcn/ui Components
+
+This starter template comes with the following shadcn/ui components pre-installed:
+
+- Button
+- Card
+
+To add more components, use the shadcn/ui CLI:
+
+```bash
+npx shadcn-ui@latest add [component-name]
+```
+
+For example, to add the Dialog component:
+
+```bash
+npx shadcn-ui@latest add dialog
+```
+
+## Customization
+
+### Theming
+
+The project uses the "New York" style with the "zinc" base color. You can customize the theme by modifying the `components.json` file and the CSS variables in `src/index.css`.
+
+### Tailwind Configuration
+
+Tailwind CSS is pre-configured with the shadcn/ui recommended settings. You can extend the configuration as needed.
+
+## Deployment
+
+Build your application for production:
+
+```bash
+pnpm build
+```
+
+The build artifacts will be stored in the `dist/` directory, ready to be deployed to your preferred hosting platform.
+
+## Learn More
+
+- [Vite Documentation](https://vitejs.dev/guide/)
+- [React Documentation](https://react.dev/)
+- [shadcn/ui Documentation](https://ui.shadcn.com/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+
+## License
+
+This project is licensed under the MIT License.
